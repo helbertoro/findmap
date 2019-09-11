@@ -19,3 +19,4 @@
 - Visualización del estado del tráfico en la ciudad
 - Comportamiento PWA
 - El administrador puede ingresar, editar y eliminar reportes del mapa
+-
