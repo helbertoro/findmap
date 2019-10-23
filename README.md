@@ -1,12 +1,13 @@
-#FindMap
+# FindMap
 
 ## Tecnologias
+
 - HTML 5
 - CSS -> Sass
 - Arquitectura CSS -> BEM
 - Javascipt
 
-### Features
+## Features
 
 - Búsqueda de ubicaciones a las que quiere llegar.
 - Pantalla de mapa con las opciones de rutas que puede tomar para llegar al destino
@@ -19,3 +20,21 @@
 - Visualización del estado del tráfico en la ciudad
 - Comportamiento PWA
 - El administrador puede ingresar, editar y eliminar reportes del mapa
+
+### Instalación
+```
+npm install
+```
+
+### Ejecución
+```
+npm run start
+```
+
+### Compilar
+```
+npm run build
+```
+
+### Licencia
+FindMap se lanza bajo la licencia [MIT](https://opensource.org/licenses/MIT).
