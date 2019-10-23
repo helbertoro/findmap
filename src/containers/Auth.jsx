@@ -1,8 +1,8 @@
 import React from 'react';
-import Helloworld from '../components/Helloworld';
+import Home from './Home';
 
 const Auth = () => (
-    <Helloworld />
+    <Home />
 );
 
 export default Auth;
