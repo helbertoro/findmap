@@ -1,0 +1,29 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import UserFormInput from '../components/UserFormInput';
+import UserFormButton from '../components/UserFormButton';
+import '../assets/styles/UserForm.sass'
+
+const Login = () => (
+    <div className="container">
+        <div className="container__auth">
+            <h2>Iniciar sesión</h2>
+            <form className="user-form" action="">
+                <UserFormInput type="email" placeholder="Correo electrónico"/>
+                <UserFormInput type="password" placeholder="Contraseña"/>
+                <UserFormButton value="Iniciar sesión"/>
+            </form>
+            <p>
+                <Link className="container__auth--link" to="/remember-password">
+                    Olvide mi contraseña
+                </Link>
+            </p>
+            <p>
+                <span>No tengo una cuenta</span> 
+                <Link className="container__auth--link ml-2" to="/">Registrarme</Link>
+            </p>            
+        </div>
+    </div>
+);
+
+export default Login;
