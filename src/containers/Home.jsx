@@ -2,7 +2,7 @@ import React from 'react';
 import '../assets/styles/Home.sass';
 import SeekerInput from '../components/SeekerInput';
 import UserIcon from '../components/UserIcon';
-import AddBottom from '../components/AddBottom';
+import DirectionButton from '../components/DirectionButton';
 
 const Home = () => (
   <div className='container'>
@@ -12,7 +12,7 @@ const Home = () => (
     </div>
     <div className='footer'>
       <img src='https://img.icons8.com/pastel-glyph/64/000000/worldwide-location--v2.png' alt='logo' />
-      <AddBottom />
+      <DirectionButton href='/' background='https://img.icons8.com/ios/50/000000/add.png' />
     </div>
   </div>
 
