@@ -2,7 +2,7 @@ import React from 'react';
 import Home from './Home';
 
 const Auth = () => (
-    <Home />
+  <Home />
 );
 
 export default Auth;
