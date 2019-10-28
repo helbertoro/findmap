@@ -1,11 +1,13 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Auth from '../containers/Auth';
+import Home from '../containers/Home';
+import Search from '../containers/Search';
 
 const App = () => (
     <BrowserRouter>
         <Switch>
-            <Route exact path="/" component={Auth} />
+            <Route exact path="/" component={Home} />
+            <Route exact path="/search" component={Search} />
         </Switch>
     </BrowserRouter>
 );
