@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../assets/styles/components/UserIcon.sass';
 
-const UserIcon = () => (
-  <a href='/' className=' userIcon'><img src='https://img.icons8.com/doodle/48/000000/user-female--v4.png' alt='UserIcon' /></a>
+const UserIcon = ({ href, background }) => (
+  <Link to={href} className=' userIcon'><img src={background} alt='UserIcon' /></Link>
 );
 
 export default UserIcon;
