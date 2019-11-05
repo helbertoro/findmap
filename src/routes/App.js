@@ -4,12 +4,15 @@ import Home from '../containers/Home';
 import Search from '../containers/Search';
 
 const App = () => (
-    <BrowserRouter>
-        <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/search" component={Search} />
-        </Switch>
-    </BrowserRouter>
+  <BrowserRouter>
+    <Switch>
+      <Route exact path="/" component={Register} />
+      <Route exact path="/login" component={Login} />
+      <Route exact path="/remember-password" component={RememberPassword} />
+      <Route exact path="/home" component={Home} />
+      <Route exact path="/search" component={Search} />
+    </Switch>
+  </BrowserRouter>
 );
 
 export default App;
