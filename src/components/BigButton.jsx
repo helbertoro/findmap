@@ -1,17 +1,8 @@
 import React from 'react';
 import '../assets/styles/components/BigButton.sass';
 
-class BigButton extends React.Component {
-
-  handleClick(e){
-    console.log('click en boton ',e);
-  }
-  
-  render() {
-    return (
-      <button onClick={this.handleClick} type='button' className='buttonBig'>{this.props.text}</button>
-    );
-  }
-};
+const BigButton = ({ text }) => (
+  <button type='button' className='buttonBig'>{text}</button>
+);
 
 export default BigButton;

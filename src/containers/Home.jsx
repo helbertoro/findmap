@@ -14,8 +14,7 @@ class Home extends React.Component {
   }
 
   handleFocus() {
-    this.props.history.push('/home/search');
-    console.log(this.elementRef);
+    this.props.history.push('/search');
     
   }
 

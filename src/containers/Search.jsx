@@ -12,10 +12,15 @@ class Search extends React.Component {
   constructor(props){
     super(props);
     this.elementRef = React.createRef();
+    this.handleDirection = this.handleDirection.bind(this);
   }
 
   componentDidMount() {
     this.elementRef.current.focus();
+  }
+
+  handleDirection(){
+    this.props.history.goBack();
   }
 
   render() {
@@ -23,7 +28,7 @@ class Search extends React.Component {
       <>
         <div className='header'>
           <SeekerInput refName={this.elementRef} placeholder='¿A dónde quieres ir hoy?' type='text' />
-          <SmallButtonDirection href='/home' background='https://img.icons8.com/android/50/000000/return.png' />
+          <SmallButtonDirection href={this.handleDirection} background='https://img.icons8.com/android/50/000000/return.png' />
         </div>
         <section className='banner'>
           <DirectionButton href='#' background='https://img.icons8.com/color/48/000000/money-heist-dali.png' />
