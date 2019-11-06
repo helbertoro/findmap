@@ -22,7 +22,7 @@ class Home extends React.Component {
     return (
       <>
         <MapContainer/>
-        <div className='container__home'>
+        <section className='container__home'>
           <div className='header'>
             <SeekerInput focus={this.autoFocus} direction={this.handleFocus} type='text' placeholder='¿A dónde quieres ir hoy?' />
             <UserIcon href='#' background='https://img.icons8.com/doodle/48/000000/user-female--v4.png' />
@@ -31,7 +31,7 @@ class Home extends React.Component {
             <img src='https://img.icons8.com/pastel-glyph/64/000000/worldwide-location--v2.png' alt='logo' />
             <DirectionButton href='#' background='https://img.icons8.com/ios/50/000000/add.png' />
           </div>
-        </div>
+        </section>
       </>
     );
   }
