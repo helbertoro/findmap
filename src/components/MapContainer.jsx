@@ -2,19 +2,121 @@
 import React from 'react';
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 
-const MapContainer = ({ google }) => {
-  return (
-    <Map 
-      google={google}
-      zoom={5}
-			initialCenter={{ lat: 19.5943885, lng: -97.9526044 }}
-			styles='height: 100px'
-    >
-      <Marker
-        position={{ lat: 19.4267261, lng: -99.1718706 }}
-      />
-    </Map> 
-  );
+class MapContainer extends React.Component {
+  
+  constructor(props) {
+    super(props);
+
+    this.style = {
+      width: '100%',
+      height: '100%',
+    };
+    this.location = {
+      lat: 4.6560716,
+      lng: -74.0595918,
+    };
+    this.stylesDarck = [
+      {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
+      {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
+      {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
+      {
+        featureType: 'administrative.locality',
+        elementType: 'labels.text.fill',
+        stylers: [{color: '#d59563'}]
+      },
+      {
+        featureType: 'poi',
+        elementType: 'labels.text.fill',
+        stylers: [{color: '#d59563'}]
+      },
+      {
+        featureType: 'poi.park',
+        elementType: 'geometry',
+        stylers: [{color: '#263c3f'}]
+      },
+      {
+        featureType: 'poi.park',
+        elementType: 'labels.text.fill',
+        stylers: [{color: '#6b9a76'}]
+      },
+      {
+        featureType: 'road',
+        elementType: 'geometry',
+        stylers: [{color: '#38414e'}]
+      },
+      {
+        featureType: 'road',
+        elementType: 'geometry.stroke',
+        stylers: [{color: '#212a37'}]
+      },
+      {
+        featureType: 'road',
+        elementType: 'labels.text.fill',
+        stylers: [{color: '#9ca5b3'}]
+      },
+      {
+        featureType: 'road.highway',
+        elementType: 'geometry',
+        stylers: [{color: '#746855'}]
+      },
+      {
+        featureType: 'road.highway',
+        elementType: 'geometry.stroke',
+        stylers: [{color: '#1f2835'}]
+      },
+      {
+        featureType: 'road.highway',
+        elementType: 'labels.text.fill',
+        stylers: [{color: '#f3d19c'}]
+      },
+      {
+        featureType: 'transit',
+        elementType: 'geometry',
+        stylers: [{color: '#2f3948'}]
+      },
+      {
+        featureType: 'transit.station',
+        elementType: 'labels.text.fill',
+        stylers: [{color: '#d59563'}]
+      },
+      {
+        featureType: 'water',
+        elementType: 'geometry',
+        stylers: [{color: '#17263c'}]
+      },
+      {
+        featureType: 'water',
+        elementType: 'labels.text.fill',
+        stylers: [{color: '#515c6d'}]
+      },
+      {
+        featureType: 'water',
+        elementType: 'labels.text.stroke',
+        stylers: [{color: '#17263c'}]
+      }
+    ];
+
+  }
+
+
+
+  render() {
+    
+    return (
+      <Map
+        style={this.style}
+        google={this.props.google}
+        zoom={12}
+        initialCenter={this.location} 
+        styles = { this.stylesDarck }
+
+      >
+        <Marker
+          position={this.location}
+        />
+      </Map>
+    );
+  }
 }
 
 export default GoogleApiWrapper({

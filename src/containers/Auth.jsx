@@ -1,9 +1,9 @@
 import React from 'react';
-import Home from './Home';
 import MapContainer from '../components/MapContainer';
+import '../assets/styles/Auth.sass';
 
 const Auth = () => (
-  <MapContainer/>
+  <MapContainer>Hola</MapContainer>
 );
 
 export default Auth;
