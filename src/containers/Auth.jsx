@@ -1,8 +1,9 @@
 import React from 'react';
 import Home from './Home';
+import MapContainer from '../components/MapContainer';
 
 const Auth = () => (
-  <Home />
+  <MapContainer/>
 );
 
 export default Auth;
