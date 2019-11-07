@@ -28,7 +28,7 @@ class Search extends React.Component {
       <>
         <div className='header'>
           <SeekerInput refName={this.elementRef} placeholder='¿A dónde quieres ir hoy?' type='text' />
-          <SmallButtonDirection href={this.handleDirection} background='https://img.icons8.com/android/50/000000/return.png' />
+          <SmallButtonDirection href={this.handleDirection}  />
         </div>
         <section className='banner'>
           <DirectionButton href='#' background='https://img.icons8.com/color/48/000000/money-heist-dali.png' />
@@ -39,19 +39,19 @@ class Search extends React.Component {
         </section>
         <section className='favorites'>
           <TitleSearch text='Favoritos' />
-          <div className='favorits__container'>
+          <div className='favorites__container'>
             <TextSearch href='#' text='Contray to popular belief' />
             <DeleteButtonMin background='https://img.icons8.com/color/48/000000/minus.png' />
           </div>
-          <div className='favorits__container'>
+          <div className='favorites__container'>
             <TextSearch href='#' text='Lorem Impsum is not simply random text' />
             <DeleteButtonMin background='https://img.icons8.com/color/48/000000/minus.png' />
           </div>
-          <div className='favorits__container'>
+          <div className='favorites__container'>
             <TextSearch href='#' text='Contray to popular belief' />
             <DeleteButtonMin background='https://img.icons8.com/color/48/000000/minus.png' />
           </div>
-          <div className='favorits__container'>
+          <div className='favorites__container'>
             <TextSearch href='#' text='Lorem Impsum is not simply random text' />
             <DeleteButtonMin background='https://img.icons8.com/color/48/000000/minus.png' />
           </div>
