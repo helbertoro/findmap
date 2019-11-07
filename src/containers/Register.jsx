@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import UserFormInput from '../components/UserFormInput';
 import UserFormButton from '../components/UserFormButton';
-import '../assets/styles/UserForm.sass'
+import '../assets/styles/UserForm.sass';
 
 const Register = () => (
     <div className="container">
