@@ -10,10 +10,34 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.handleFocus = this.handleFocus.bind(this);
+    this.setGeolocation = this.setGeolocation.bind(this);
+
+    this.state = {
+      position: {
+        lat: 4.605624, lng: -74.181895
+      }
+    }
+  }
+
+  componentDidMount() {
+    navigator.geolocation.getCurrentPosition(
+        pos => {
+          this.setGeolocation(pos.coords);
+        },
+        err => {
+          console.log(`${err.code} ${err.message}`);
+        }
+    );
+
+    console.log(`Latitud: ${this.state.position.lat} Longitud: ${this.state.position.lng}`);
   }
 
   handleFocus() {
     this.props.history.push('/search');
+  }
+
+  setGeolocation(coords) {
+    this.setState({position: { lat: coords.latitude, lng: coords.longitude }});
   }
 
   render() {
@@ -23,14 +47,15 @@ class Home extends React.Component {
         <Map
           id="map"
           options={{
-            center: { lat: 4.605624, lng: -74.181895 },
-            zoom: 14
+            center: { lat: this.state.position.lat, lng: this.state.position.lng },
+            zoom: 14,
+            disableDefaultUI: true
           }}
           onMapLoad={map => {
             var marker = new window.google.maps.Marker({
-              position: { lat: 41.0082, lng: 28.9784 },
+              position: { lat: this.state.position.lat, lng: this.state.position.lng },
               map: map,
-              title: 'Hello Istanbul!'
+              title: 'Hello Bogotá!'
             });
           }}
         />
