@@ -1,12 +1,13 @@
 import React from 'react';
 import '../assets/styles/Search.sass';
-import SeekerInput from '../components/SeekerInput';
+import SeekerInput from '../components/SearchGoogleInput';
 import SmallButtonDirection from '../components/SmallButtonDirection';
 import DirectionButton from '../components/DirectionButton';
 import TitleSearch from '../components/TitleSearch';
 import TextSearch from '../components/TextSearch';
 import DeleteButtonMin from '../components/DeleteButtonMin';
 import BigButton from '../components/BigButton';
+import SearchGoogleInput from '../components/SearchGoogleInput';
 
 class Search extends React.Component {
   constructor(props){
@@ -27,7 +28,7 @@ class Search extends React.Component {
     return(
       <div className='container-search'>
         <div className='container-search__header'>
-          <SeekerInput refName={this.elementRef} placeholder='¿A dónde quieres ir hoy?' type='text' />
+          <SearchGoogleInput refName={this.elementRef} />
           <SmallButtonDirection href={this.handleDirection}  />
         </div>
         <section className='container-search__banner'>
