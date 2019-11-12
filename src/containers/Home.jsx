@@ -14,7 +14,7 @@ class Home extends React.Component {
 
     this.state = {
       position: {
-        lat: 4.605624, lng: -74.181895
+        lat: -34.397, lng: 150.644
       }
     }
   }
@@ -38,6 +38,7 @@ class Home extends React.Component {
 
   setGeolocation(coords) {
     this.setState({position: { lat: coords.latitude, lng: coords.longitude }});
+    console.log(this.state);
   }
 
   render() {
