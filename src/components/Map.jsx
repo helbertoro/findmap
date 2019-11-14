@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class Map extends Component {
   constructor(props) {
@@ -19,4 +20,10 @@ class Map extends Component {
   }
 }
 
-export default Map
+const mapStateToProps = state => {
+  return {
+    map: state.map
+  }
+};
+
+export default connect(mapStateToProps, null)(Map);
