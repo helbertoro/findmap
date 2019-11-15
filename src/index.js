@@ -7,6 +7,7 @@ import App from './routes/App';
 
 const initialState = {
     "user": {},
+    "position": {},
     "map": {},
     "favorites": {},
     "Record": {}

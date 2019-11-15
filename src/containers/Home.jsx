@@ -1,9 +1,11 @@
 import React from 'react';
 import Map from '../components/Map';
-import '../assets/styles/Home.sass';
+import { connect } from 'react-redux';
+import { setPosition} from '../actions';
 import SeekerInput from '../components/SeekerInput';
 import UserIcon from '../components/UserIcon';
 import DirectionButton from '../components/DirectionButton';
+import '../assets/styles/Home.sass';
 
 class Home extends React.Component {
 
@@ -14,7 +16,7 @@ class Home extends React.Component {
 
     this.state = {
       position: {
-        lat: -34.397, lng: 150.644
+        lat: 4.6457082, lng: -74.0941634
       }
     }
   }
@@ -37,29 +39,32 @@ class Home extends React.Component {
   }
 
   setGeolocation(coords) {
-    this.setState({position: { lat: coords.latitude, lng: coords.longitude }});
-    console.log(this.state);
+    this.props.setPosition({ 
+      lat: coords.latitude, 
+      lng: coords.longitude 
+    });
   }
 
   render() {
     return (
       <div className='container__home'>
-
-        <Map
-          id="map"
-          options={{
-            center: { lat: this.state.position.lat, lng: this.state.position.lng },
-            zoom: 14,
-            disableDefaultUI: true
-          }}
-          onMapLoad={map => {
-            var marker = new window.google.maps.Marker({
-              position: { lat: this.state.position.lat, lng: this.state.position.lng },
-              map: map,
-              title: 'Hello Bogotá!'
-            });
-          }}
-        />
+        {this.props.position.lat &&
+          <Map
+            id="map"
+            options={{
+              center: { lat: this.props.position.lat, lng: this.props.position.lng },
+              zoom: 14,
+              disableDefaultUI: true
+            }}
+            onMapLoad={map => {
+              var marker = new window.google.maps.Marker({
+                position: { lat: this.props.position.lat, lng: this.props.position.lng },
+                map: map,
+                title: 'Hello Bogotá!'
+              });
+            }}
+          />
+        }
 
         <div className='container__home--header'>
           <SeekerInput focus={this.autoFocus} direction={this.handleFocus} type='text' placeholder='¿A dónde quieres ir hoy?' />
@@ -74,4 +79,14 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+const mapDispatchToProps = {
+  setPosition,
+}
+
+const mapStateToProps = state => {
+  return {
+    position: state.position
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
