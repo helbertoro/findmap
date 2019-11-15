@@ -5,7 +5,13 @@ const reducer = (state, action) => {
                 ...state,
                 position: action.payload
             }
-        break;    
+        break;
+        case 'SET_DESTINATION':
+            return {
+                ...state,
+                destination: action.payload
+            }
+        break;
         default:
             return state;
         break;

@@ -7,6 +7,7 @@ class Map extends Component {
   }
 
   componentDidMount() {
+    console.log(this.props.destination);
     const map = new window.google.maps.Map(
       document.getElementById(this.props.id),
       this.props.options);
@@ -24,7 +25,9 @@ class Map extends Component {
 
 const mapStateToProps = state => {
   return {
-    map: state.map
+    map: state.map,
+    position: state.position,
+    destination: state.destination
   }
 };
 

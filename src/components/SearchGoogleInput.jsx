@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { setDestination } from '../actions';
 import '../assets/styles/components/SeekerInput.sass';
 
 class SearchGoogleInput extends React.Component {
@@ -10,11 +12,10 @@ class SearchGoogleInput extends React.Component {
         let input = document.getElementById('pac-input');
         let searchBox = new google.maps.places.SearchBox(input);
 
-        // searchBox.addListener('places_changed', function() {
-        //     let places = searchBox.getPlaceBasicData();
-        //     console.log(places);
-        // })
-
+        this.props.setDestination({ 
+            lat: 4.5927558,
+            lng: -74.1327422
+        });
     }
     
     render() {
@@ -24,4 +25,8 @@ class SearchGoogleInput extends React.Component {
     }
 }
 
-export default SearchGoogleInput;
+const mapDispatchToProps = {
+    setDestination,
+}
+
+export default connect(null, mapDispatchToProps)(SearchGoogleInput);
