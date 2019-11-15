@@ -13,12 +13,6 @@ class Home extends React.Component {
     super(props);
     this.handleFocus = this.handleFocus.bind(this);
     this.setGeolocation = this.setGeolocation.bind(this);
-
-    this.state = {
-      position: {
-        lat: 4.6457082, lng: -74.0941634
-      }
-    }
   }
 
   componentDidMount() {
@@ -30,8 +24,6 @@ class Home extends React.Component {
           console.log(`${err.code} ${err.message}`);
         }
     );
-
-    console.log(`Latitud: ${this.state.position.lat} Longitud: ${this.state.position.lng}`);
   }
 
   handleFocus() {
