@@ -1,8 +1,8 @@
 import React from 'react';
-import Home from './Home';
+import AddFavorites from '../components/AddFavorites';
 
 const Auth = () => (
-  <Home />
+  <AddFavorites />
 );
 
 export default Auth;
