@@ -128,13 +128,6 @@ class Home extends React.Component {
                 }
               ]
             }}
-            onMapLoad={map => {
-              var marker = new window.google.maps.Marker({
-                position: { lat: this.props.position.lat, lng: this.props.position.lng },
-                map: map,
-                title: 'Hello Bogotá!'
-              });
-            }}
           />
         }
 
