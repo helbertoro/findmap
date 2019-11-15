@@ -11,6 +11,8 @@ class Map extends Component {
       document.getElementById(this.props.id),
       this.props.options);
     this.props.onMapLoad(map)
+    var trafficLayer = new google.maps.TrafficLayer();
+    trafficLayer.setMap(map);
   }
 
   render() {

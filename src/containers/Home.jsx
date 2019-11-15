@@ -45,7 +45,7 @@ class Home extends React.Component {
             id="map"
             options={{
               center: { lat: this.props.position.lat, lng: this.props.position.lng },
-              zoom: 14,
+              zoom: 19,
               disableDefaultUI: true
             }}
             onMapLoad={map => {
