@@ -5,6 +5,7 @@ import Login from '../containers/Login';
 import RememberPassword from '../containers/RememberPassword';
 import Home from '../containers/Home';
 import Search from '../containers/Search';
+import '../assets/styles/App.sass';
 
 const App = () => (
   <BrowserRouter>

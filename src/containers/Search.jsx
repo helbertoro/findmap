@@ -1,12 +1,13 @@
 import React from 'react';
 import '../assets/styles/Search.sass';
-import SeekerInput from '../components/SeekerInput';
+import SeekerInput from '../components/SearchGoogleInput';
 import SmallButtonDirection from '../components/SmallButtonDirection';
 import DirectionButton from '../components/DirectionButton';
 import TitleSearch from '../components/TitleSearch';
 import TextSearch from '../components/TextSearch';
 import DeleteButtonMin from '../components/DeleteButtonMin';
 import BigButton from '../components/BigButton';
+import SearchGoogleInput from '../components/SearchGoogleInput';
 
 class Search extends React.Component {
   constructor(props){
@@ -25,51 +26,55 @@ class Search extends React.Component {
 
   render() {
     return(
-      <>
-        <div className='header'>
-          <SeekerInput refName={this.elementRef} placeholder='¿A dónde quieres ir hoy?' type='text' />
+      <div className='container-search'>
+        <div className='container-search__header'>
+          <SearchGoogleInput refName={this.elementRef} />
           <SmallButtonDirection href={this.handleDirection}  />
         </div>
-        <section className='banner'>
+        <section className='container-search__banner'>
           <DirectionButton href='#' background='https://img.icons8.com/color/48/000000/money-heist-dali.png' />
           <DirectionButton href='#' background='https://img.icons8.com/color/48/000000/walter-white.png' />
           <DirectionButton href='#' background='https://img.icons8.com/color/48/000000/iron-man.png' />
           <DirectionButton href='#' background='https://img.icons8.com/color/48/000000/money-heist-dali.png' />
           <DirectionButton href='#' background='https://img.icons8.com/color/48/000000/walter-white.png' />
         </section>
-        <section className='favorites'>
+        <section className='container-search__favorites'>
           <TitleSearch text='Favoritos' />
-          <div className='favorites__container'>
+          <div className='container-search__favorites--favorite'>
             <TextSearch href='#' text='Contray to popular belief' />
             <DeleteButtonMin background='https://img.icons8.com/color/48/000000/minus.png' />
           </div>
-          <div className='favorites__container'>
+          <div className='container-search__favorites--favorite'>
             <TextSearch href='#' text='Lorem Impsum is not simply random text' />
             <DeleteButtonMin background='https://img.icons8.com/color/48/000000/minus.png' />
           </div>
-          <div className='favorites__container'>
+          <div className='container-search__favorites--favorite'>
             <TextSearch href='#' text='Contray to popular belief' />
             <DeleteButtonMin background='https://img.icons8.com/color/48/000000/minus.png' />
           </div>
-          <div className='favorites__container'>
+          <div className='container-search__favorites--favorite'>
             <TextSearch href='#' text='Lorem Impsum is not simply random text' />
             <DeleteButtonMin background='https://img.icons8.com/color/48/000000/minus.png' />
           </div>
-          <div className='favorits__button'>
+          <div className='container-search__favorites--button'>
             <BigButton text='Ver todos los favoritos' />
           </div>
         </section>
-        <section className='favorites'>
+        <section className='container-search__favorites'>
           <TitleSearch text='Historial de búsqueda' />
-          <TextSearch href='#' text='Contray to popular belief' />
-          <TextSearch href='#' text='Lorem Impsum is not simply random text sebastian' />
-          <TextSearch href='#' text='Contray to popular belief' />
+          <div className='container-search__favorites--favorite'>
+            <TextSearch href='#' text='Contray to popular belief' />
+          </div>
+          <div className='container-search__favorites--favorite'>
+            <TextSearch href='#' text='Lorem Impsum is not simply random text' />
+          </div>
+          <div className='container-search__favorites--favorite'>
+            <TextSearch href='#' text='Contray to popular belief' />
+          </div>
         </section>
-      </>
+      </div>
     );
   }
 
-
 }
 export default Search;
-

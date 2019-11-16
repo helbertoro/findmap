@@ -1,34 +1,33 @@
 @import './Vars.sass'
 
-body
-    padding: 20px 10px 30px 10px
-    margin: 0px
-    font-family: $font
-    background-color: $dark_strong
+.container-search
+    width: 100%
+    height: 100%
+    padding: 20px 20px 30px 20px
+    box-sizing: border-box
+    position: relative
 
+    &__header
+        width: 100%
+        display: flex
+        align-items: center
+        justify-content: space-between
 
-.header
-    height: 30px
-    display: flex
-    justify-content: space-around
-    align-items: center
+    &__banner
+        margin-top: 20px
+        display: flex
+        justify-content: space-between
+        align-items: center
 
-.banner
-    margin-top: 20px
-    height: 70px
-    display: flex
-    justify-content: space-around
-    align-items: center
+    &__favorites
+        margin-top: 20px
 
-.favorites
-    margin: 10px 15px 20px 15px
+        &--favorite
+            margin-bottom: 10px
+            display: flex
+            justify-content: space-between
 
-.favorites__container
-    margin-bottom: 10px
-    display: flex
-    justify-content: space-between
-
-.favorits__button
-    margin-top: 15px
-    display: flex
-    justify-content: center
+        // &--button
+        //     margin-top: 15px
+        //     display: flex
+        //     justify-content: center
