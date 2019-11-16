@@ -21,11 +21,6 @@ class Home extends React.Component {
     };
   }
 
-  handleUI() {
-    this.setState({ handleUI: !this.state.handleUI});
-  }
-
-
   componentDidMount() {
     navigator.geolocation.getCurrentPosition(
         pos => {
@@ -35,6 +30,10 @@ class Home extends React.Component {
           console.log(`${err.code} ${err.message}`);
         }
     );
+  }
+
+  handleUI() {
+    this.setState({ handleUI: !this.state.handleUI});
   }
 
   handleFocus() {
@@ -77,7 +76,10 @@ class Home extends React.Component {
           <DirectionButton onClick={this.handleUI} href='#' background='https://img.icons8.com/ios/50/000000/add.png' />
 
           {
-            this.state.handleUI && <AddFavorites onClick={this.handleUI} />
+            this.state.handleUI && <AddFavorites
+            onHandle={this}
+            onClick={this.handleUI}
+             />
           }
         </div>
       </div>
@@ -87,11 +89,11 @@ class Home extends React.Component {
 
 const mapDispatchToProps = {
   setPosition,
-}
+};
 
 const mapStateToProps = state => {
   return {
-    position: state.position
+    position: state.position,
   }
 };
 
