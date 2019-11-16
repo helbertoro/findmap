@@ -74,7 +74,6 @@ class Home extends React.Component {
         <div className='container__home--footer'>
           <img src='https://img.icons8.com/pastel-glyph/64/000000/worldwide-location--v2.png' alt='logo' />
           <DirectionButton onClick={this.handleUI} href='#' background='https://img.icons8.com/ios/50/000000/add.png' />
-
           {
             this.state.handleUI && <AddFavorites
             onHandle={this}
