@@ -6,6 +6,7 @@ import RememberPassword from '../containers/RememberPassword';
 import Home from '../containers/Home';
 import Search from '../containers/Search';
 import '../assets/styles/App.sass';
+import Auth from '../containers/Auth';
 
 const App = () => (
   <BrowserRouter>
@@ -15,6 +16,7 @@ const App = () => (
       <Route exact path="/remember-password" component={RememberPassword} />
       <Route exact path="/home" component={Home} />
       <Route exact path="/search" component={Search} />
+      <Route exact path="/test" component={Auth} />
     </Switch>
   </BrowserRouter>
 );

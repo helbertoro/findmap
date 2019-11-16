@@ -5,6 +5,7 @@ import { setPosition} from '../actions';
 import SeekerInput from '../components/SeekerInput';
 import UserIcon from '../components/UserIcon';
 import DirectionButton from '../components/DirectionButton';
+import AddFavorites from '../components/AddFavorites';
 import '../assets/styles/Home.sass';
 
 class Home extends React.Component {
@@ -13,6 +14,11 @@ class Home extends React.Component {
     super(props);
     this.handleFocus = this.handleFocus.bind(this);
     this.setGeolocation = this.setGeolocation.bind(this);
+    this.handleUI = this.handleUI.bind(this);
+
+    this.state = {
+      handleUI: false,
+    };
   }
 
   componentDidMount() {
@@ -24,6 +30,10 @@ class Home extends React.Component {
           console.log(`${err.code} ${err.message}`);
         }
     );
+  }
+
+  handleUI() {
+    this.setState({ handleUI: !this.state.handleUI});
   }
 
   handleFocus() {
@@ -130,14 +140,19 @@ class Home extends React.Component {
             }}
           />
         }
-
         <div className='container__home--header'>
           <SeekerInput focus={this.autoFocus} direction={this.handleFocus} type='text' placeholder='¿A dónde quieres ir hoy?' />
           <UserIcon href='#' background='https://img.icons8.com/doodle/48/000000/user-female--v4.png' />
         </div>
         <div className='container__home--footer'>
           <img src='https://img.icons8.com/pastel-glyph/64/000000/worldwide-location--v2.png' alt='logo' />
-          <DirectionButton href='#' background='https://img.icons8.com/ios/50/000000/add.png' />
+          <DirectionButton onClick={this.handleUI} href='#' background='https://img.icons8.com/ios/50/000000/add.png' />
+          {
+            this.state.handleUI && <AddFavorites
+            onHandle={this}
+            onClick={this.handleUI}
+             />
+          }
         </div>
       </div>
     );
@@ -146,11 +161,11 @@ class Home extends React.Component {
 
 const mapDispatchToProps = {
   setPosition,
-}
+};
 
 const mapStateToProps = state => {
   return {
-    position: state.position
+    position: state.position,
   }
 };
 
