@@ -1,16 +1,31 @@
 @import '../Vars.sass'
 
 .seeker
-    color: $dark_strong
-    background-color: $grey
-    border-radius: 7px
-    height: 40px
-    width: 80%
-    font-family: $font
-    font-size: 15px
-    border: none
-    padding-left: 20px
-    outline: none
+    width: 85%
 
-    &::placeholder
-    color: $dark_strong
+    &__input
+        display: inline-block
+        background-color: $grey
+        width: 84%
+        height: 40px
+        border-radius: 7px 0px 0px 7px
+        font-family: $font
+        color: $dark_strong
+        font-size: 15px
+        border: none
+        padding-left: 15px
+        box-sizing: border-box
+        outline: none
+
+        &::placeholder
+        color: $dark_strong
+    
+    &__button
+        background-color: $yellow
+        display: inline-block
+        width: 16%
+        height: 40px
+        border-radius: 0px 7px 7px 0px
+        font-family: $font
+        font-size: 15px
+        border: none

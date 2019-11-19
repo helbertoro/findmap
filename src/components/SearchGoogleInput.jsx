@@ -17,11 +17,19 @@ class SearchGoogleInput extends React.Component {
             lng: -74.1327422
         });
     }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        console.log('submit');
+    }
     
     render() {
         return (
-            <input id='pac-input' ref={this.props.refName} className='seeker' type='text' name='seeker' placeholder='¿A dónde quieres ir hoy?' />
-        );
+            <form onSubmit={this.handleSubmit} className="seeker">
+                <input id='pac-input' ref={this.props.refName} className='seeker__input' type='text' name='seeker' placeholder='¿A dónde quieres ir hoy?' />
+                <button className='seeker__button'><i className="fas fa-search"></i></button>
+            </form>
+        )
     }
 }
 
