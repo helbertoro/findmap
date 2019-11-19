@@ -28,8 +28,8 @@ class Search extends React.Component {
     return(
       <div className='container-search'>
         <div className='container-search__header'>
-          <SearchGoogleInput refName={this.elementRef} />
           <SmallButtonDirection href={this.handleDirection}  />
+          <SearchGoogleInput refName={this.elementRef} />
         </div>
         <section className='container-search__banner'>
           <DirectionButton href='#' background='https://img.icons8.com/color/48/000000/money-heist-dali.png' />

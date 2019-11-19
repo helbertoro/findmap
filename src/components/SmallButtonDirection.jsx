@@ -3,7 +3,7 @@ import '../assets/styles/components/SmallButtonDirection.sass';
 
 const SmallButtonDirection = ({ href }) => {
   return (
-    <button type='button' onClick={href} className='smallButton' />
+    <a onClick={href} className='smallButton'><i class="fas fa-angle-left"></i></a>
   );
 }
 
