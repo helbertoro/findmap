@@ -1,35 +1,48 @@
 import React from 'react';
-import '../assets/styles/Search.sass';
-import SeekerInput from '../components/SearchGoogleInput';
+import { connect } from 'react-redux';
+import { setDestination } from '../actions';
 import SmallButtonDirection from '../components/SmallButtonDirection';
 import DirectionButton from '../components/DirectionButton';
 import TitleSearch from '../components/TitleSearch';
 import TextSearch from '../components/TextSearch';
 import DeleteButtonMin from '../components/DeleteButtonMin';
 import BigButton from '../components/BigButton';
-import SearchGoogleInput from '../components/SearchGoogleInput';
+import '../assets/styles/Search.sass';
+import '../assets/styles/components/SeekerInput.sass';
 
 class Search extends React.Component {
   constructor(props){
     super(props);
     this.elementRef = React.createRef();
     this.handleDirection = this.handleDirection.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
     this.elementRef.current.focus();
+    let input = document.getElementById('pac-input');
+    let searchBox = new google.maps.places.Autocomplete(input);
   }
 
   handleDirection(){
     this.props.history.goBack();
   }
 
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.setDestination(e.target.seeker.value);
+    this.props.history.push('/home');
+  }
+
   render() {
     return(
       <div className='container-search'>
         <div className='container-search__header'>
-          <SmallButtonDirection href={this.handleDirection}  />
-          <SearchGoogleInput refName={this.elementRef} />
+          <form onSubmit={this.handleSubmit} className="seeker">
+            <input id='pac-input' ref={this.elementRef} className='seeker__input' type='text' name='seeker' placeholder='¿A dónde quieres ir hoy?' />
+            <button type="submit" className='seeker__button'><i className="fas fa-search"></i></button>
+          </form>
+          <SmallButtonDirection href={this.handleDirection} />
         </div>
         <section className='container-search__banner'>
           <DirectionButton href='#' background='https://img.icons8.com/color/48/000000/money-heist-dali.png' />
@@ -77,4 +90,10 @@ class Search extends React.Component {
   }
 
 }
-export default Search;
+
+
+const mapDispatchToProps = {
+  setDestination,
+}
+
+export default connect(null, mapDispatchToProps)(Search);
