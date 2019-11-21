@@ -11,7 +11,7 @@ const initialState = {
     "destination": "",
     "map": {},
     "favorites": {},
-    "Record": []
+    "record": []
 };
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
