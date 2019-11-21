@@ -11,8 +11,8 @@ class Map extends Component {
     const map = new window.google.maps.Map(
       document.getElementById(this.props.id),
       this.props.options);
-    /* let trafficLayer = new google.maps.TrafficLayer();
-    trafficLayer.setMap(map); */
+    // let trafficLayer = new google.maps.TrafficLayer();
+    // trafficLayer.setMap(map);
 
     if (Object.keys(this.props.destination).length === 0) {
       let marker = new window.google.maps.Marker({

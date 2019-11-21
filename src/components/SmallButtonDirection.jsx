@@ -1,9 +1,9 @@
 import React from 'react';
 import '../assets/styles/components/SmallButtonDirection.sass';
 
-const SmallButtonDirection = ({ href }) => {
+const SmallButtonDirection = ({ href, image }) => {
   return (
-    <a onClick={href} className='smallButton'><i className="fas fa-angle-left"></i></a>
+    <a onClick={href} className='smallButton'><img src={image} alt=""/></a>
   );
 }
 
