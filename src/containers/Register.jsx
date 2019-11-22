@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom';
 import UserFormInput from '../components/UserFormInput';
 import UserFormButton from '../components/UserFormButton';
 import '../assets/styles/UserForm.sass';
+import Logo from '../assets/static/logo.png';
 
 const Register = () => (
     <div className="container">
         <div className="container__auth">
+            <img className="container__auth--logo" src={Logo} alt="FindMap"/>
             <h2>Regístrate</h2>
             <form className="user-form" action="">
                 <UserFormInput type="text" placeholder="Nombre"/>

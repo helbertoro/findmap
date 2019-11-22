@@ -10,8 +10,8 @@ class Map extends Component {
     const map = new window.google.maps.Map(
       document.getElementById(this.props.id),
       this.props.options);
-    /* let trafficLayer = new google.maps.TrafficLayer();
-    trafficLayer.setMap(map); */
+    // let trafficLayer = new google.maps.TrafficLayer();
+    // trafficLayer.setMap(map);
 
     if (Object.keys(this.props.destination).length === 0) {
       let marker = new window.google.maps.Marker({
@@ -31,7 +31,7 @@ class Map extends Component {
   calculateAndDisplayRoute(directionsService, directionsRenderer) {
     directionsService.route({
       origin: {lat: this.props.position.lat, lng: this.props.position.lng},
-      destination: {lat: this.props.destination.lat, lng: this.props.destination.lng},
+      destination: {query: this.props.destination},
       travelMode: google.maps.TravelMode['DRIVING']
     }, function(response, status) {
       if (status == 'OK') {

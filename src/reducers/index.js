@@ -12,6 +12,12 @@ const reducer = (state, action) => {
                 destination: action.payload
             }
         break;
+        case 'SET_RECORD':
+            return {
+                ...state,
+                record: [...state.record, action.payload],
+            }
+        break;
         default:
             return state;
         break;

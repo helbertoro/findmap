@@ -8,10 +8,10 @@ import App from './routes/App';
 const initialState = {
     "user": {},
     "position": {},
-    "destination": {},
+    "destination": "",
     "map": {},
     "favorites": {},
-    "Record": {}
+    "record": []
 };
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

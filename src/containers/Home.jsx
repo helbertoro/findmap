@@ -3,9 +3,10 @@ import Map from '../components/Map';
 import { connect } from 'react-redux';
 import { setPosition} from '../actions';
 import SeekerInput from '../components/SeekerInput';
-import UserIcon from '../components/UserIcon';
 import DirectionButton from '../components/DirectionButton';
+import SmallButtonDirection from '../components/SmallButtonDirection';
 import '../assets/styles/Home.sass';
+import Logo from '../assets/static/logo.png';
 
 class Home extends React.Component {
 
@@ -28,6 +29,10 @@ class Home extends React.Component {
 
   handleFocus() {
     this.props.history.push('/search');
+  }
+
+  handlePerfil() {
+
   }
 
   setGeolocation(coords) {
@@ -133,10 +138,10 @@ class Home extends React.Component {
 
         <div className='container__home--header'>
           <SeekerInput focus={this.autoFocus} direction={this.handleFocus} type='text' placeholder='¿A dónde quieres ir hoy?' />
-          <UserIcon href='#' background='https://img.icons8.com/doodle/48/000000/user-female--v4.png' />
+          <SmallButtonDirection href={this.handlePerfil} image='https://img.icons8.com/ios/50/000000/homer-simpson.png'/>
         </div>
         <div className='container__home--footer'>
-          <img src='https://img.icons8.com/pastel-glyph/64/000000/worldwide-location--v2.png' alt='logo' />
+          <img className='logo' src={Logo} alt='logo' />
           <DirectionButton href='#' background='https://img.icons8.com/ios/50/000000/add.png' />
         </div>
       </div>
