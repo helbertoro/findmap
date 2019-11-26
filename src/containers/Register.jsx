@@ -24,7 +24,7 @@ const Register = (props) => {
                     <UserFormButton value="Registrarme"/>
                 </form>
                 <p>
-                    <span>Ya tengo una cuenta</span>
+                    <span className="container__auth--text">Ya tengo una cuenta</span>
                     <Link className="container__auth--link ml-2" to="/login">
                         Iniciar sesión
                     </Link>

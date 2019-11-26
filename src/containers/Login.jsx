@@ -28,7 +28,7 @@ const Login = (props) => {
                     </Link>
                 </p>
                 <p>
-                    <span>No tengo una cuenta</span> 
+                    <span className="container__auth--text">No tengo una cuenta</span> 
                     <Link className="container__auth--link ml-2" to="/">Registrarme</Link>
                 </p>            
             </div>
